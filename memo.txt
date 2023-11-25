@@ -1,0 +1,15 @@
+Users/jungsik/.ssh/config
+
+
+
+Host 52.78.187.152
+  HostName 52.78.187.152
+  User ubuntu
+
+
+
+####
+
+## 해당 폴더 및 파일은 djangoChat 을 진행하기위한 레퍼런스 파일, 이미지 파일, 참고자료 및 pem 파일을 저장하기 위해 사용중이며 ,
+
+프로젝트에 직접 관련된 본 파일은 forAWS GIT 및 AWS 에 연동되고 있습니다
