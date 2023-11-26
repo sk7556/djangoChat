@@ -1,6 +1,6 @@
-django==4.2.6
+django==4.2.7
 django-admin==2.0.2
-djangorestframework==3.12.4
+djangorestframework==3.14.0
 matplotlib==3.8.0
 pillow==10.1.0
 psycopg==3.1.12
