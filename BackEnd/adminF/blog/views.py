@@ -2,7 +2,9 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Post
 from django.urls import reverse_lazy
 from django.http import HttpResponse
+from django.urls import reverse
 
+    
 class PostList(ListView):
     model = Post
     ordering = '-pk'
@@ -14,7 +16,11 @@ class PostDetail(DetailView):
 class PostCreate(CreateView):
     model = Post
     fields = '__all__'
-    success_url = reverse_lazy('postlist')
+    success_url = reverse_lazy('post_list')
+    
+    def get_success_url(self):
+        return reverse('post_detail', args=[str(self.object.pk)])
+    
 
 class PostUpdate(UpdateView):
     model = Post
