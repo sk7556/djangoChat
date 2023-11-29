@@ -1,21 +1,47 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Post List</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
-    <div id="data"></div>
-    <script>
-        // fetch로 http://127.0.0.1:8000/blog/ 데이터 가져와서 출력
-        fetch('http://127.0.0.1:8000/blog/')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            document.getElementById('data').innerHTML = data;
-        });
-    </script>
+
+<div id="postList"></div>
+
+<script>
+    // Fetch data from the DRF endpoint
+    $.ajax({
+        url: 'http://localhost:8000/blog/',
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            // Iterate through the received data and create HTML elements
+            for (var i = 0; i < data.length; i++) {
+                var post = data[i];
+                var postElement = '<div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">' +
+                    '<h2>' + post.title + '</h2>' +
+                    '<p>' + post.content + '</p>';
+                
+                if (post.head_image) {
+                    postElement += '<img src="' + post.head_image + '" alt="Post Image" style="max-width: 100%;">';
+                }
+
+                postElement += '<p>Created at: ' + post.created_at + '</p>' +
+                    '<p>Updated at: ' + post.updated_at + '</p>' +
+                    '</div>';
+
+                // Append the post element to the postList div
+                $('#postList').append(postElement);
+            }
+        },
+        error: function(error) {
+            console.log('Error fetching data:', error);
+        }
+    });
+</script>
+
 </body>
 </html>
