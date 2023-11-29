@@ -3,12 +3,24 @@ from .models import Post
 from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.urls import reverse
-
+from django.db.models import Q
     
+
+
 class PostList(ListView):
     model = Post
     ordering = '-pk'
-    # template_name = 'blog/변경.html'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        # request의 GET 파라미터에서 'q'를 가져옵니다.
+        q = self.request.GET.get('q', '')
+
+        # 'q' 파라미터가 제공되었을 경우, 쿼리셋을 필터링합니다.
+        if q:
+            queryset = queryset.filter(Q(title__icontains=q) | Q(content__icontains=q))
+        return queryset
 
 class PostDetail(DetailView):
     model = Post
