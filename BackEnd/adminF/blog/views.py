@@ -16,10 +16,10 @@ class PostDetail(DetailView):
 class PostCreate(CreateView):
     model = Post
     fields = '__all__'
-    success_url = reverse_lazy('post_list')
+    success_url = reverse_lazy('postlist')
     
     def get_success_url(self):
-        return reverse('post_detail', args=[str(self.object.pk)])
+        return reverse('postdetail', args=[str(self.object.pk)])
     
 
 class PostUpdate(UpdateView):
