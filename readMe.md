@@ -6,8 +6,9 @@
 1. 목표와 기능
 2. 개발 환경 & 사용 기술
 3. 프로젝트 시연
-4. 프로젝트 구조 
-5. 프로젝트 개선점
+4. 프로젝트 구조
+5. 개발 일정
+6. 프로젝트 개선점
 
 -----------------
 
@@ -53,14 +54,8 @@
 
 #### API 명세
 
-* blog
-App	URL	HTTP Method	HTML File Name	Note	Login	Author
-memorycards	/	GET	memory_card_list.html	글목록 화면	✔️	
-memorycards	/	POST	memory_card_list_write.html	글목록 화면	✔️	
-memorycards	int:pk/	GET	memory_card_content.html	상세글 화면	✔️	
-memorycards	int:pk/	PUT	memory_card_content_edit.html	글 수정 화면	✔️	✔️
-memorycards	int:pk/	DELETE	memory_card_content.html	글 삭제	✔️	✔️
-
+##### * blog
+  
 | App       | URL                   | Http Method | File | 기능 |
 |------------|------------------------|-------------|-----|------|
 | blog     | blog/posts/    | '' | api.html | API Json 확인 |
@@ -68,7 +63,12 @@ memorycards	int:pk/	DELETE	memory_card_content.html	글 삭제	✔️	✔️
 |     |     | GET | index.html | List출력 |
 |     |     | DELETE | index.html | 메모삭제 |
 
+## 5. 개발 일정
+![image](https://github.com/sk7556/djangoChat/assets/109896609/93dbe3ab-8bfd-4a9c-9090-702ddefde4e2)
 
+## 6. 프로젝트 개선점
+* DRF 기본 기능에 대한 이해가 부족했고, 프로젝트 몰입 미흡으로 인해 주요 기능에 대한 구현이 이루어지지 못했습니다
+* AWS 와 GitHub 에 의한 배포 경험을 진행하지 못해 아쉬웠습니다
 
 
 
