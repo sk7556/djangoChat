@@ -1,0 +1,31 @@
+<!-- templates/postlist.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post List</title>
+</head>
+<body>
+    <h1>Post List</h1>
+    <ul id="post-list"></ul>
+    <a href="{% url 'postcreate' %}">Create a new post</a>
+
+    <script>
+        // 예시로서, 여기에서는 API를 통해 데이터를 받아와서 동적으로 목록을 생성
+        fetch('http://localhost:8000/blog/posts/')
+            .then(response => response.json())
+            .then(data => {
+                const postList = document.getElementById('post-list');
+                data.forEach(post => {
+                    const listItem = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = `/post/${post.id}/`;
+                    link.textContent = post.title;
+                    listItem.appendChild(link);
+                    postList.appendChild(listItem);
+                });
+            });
+    </script>
+</body>
+</html>

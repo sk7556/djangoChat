@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Memo with Django </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyYgSwJ4NXhPnA" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4"> 메모 스티커 </h1>
+
+        <form id="postForm" class="mx-auto mt-5">            
+            <div class="mb-6">
+                <label for="title" class="form-label col-12 mb-3">제목 :</label>
+                <input type="text" id="title" name="title" class="form-control col-12" style ="width : 95%; height : 100%" required>
+            </div>
+            <br>
+
+            <div class="mb-3">
+                <label for="content" class="form-label col-12">내용 :</label>
+                <textarea id="content" name="content" class="form-control col-12" style ="width : 95%" required></textarea>
+            </div>
+    
+            <button type="button" onclick="createPost()" class="btn btn-success" style ="width : 95%; height : 40px">Create Post</button>
+        </form>
+
+        <ul id="postList" class="row row-cols-1 row-cols-md-4 g-4 mx-3"></ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-hnHqA2UqzBJSgNFtyZbojnzPndMR0l7Rz7XaF7Z9MRlTf4yo/3z9meC2bBkx5H+V" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
