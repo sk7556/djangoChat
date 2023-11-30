@@ -1,0 +1,70 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Blog</h1>
+
+    <div id="post-list">
+        <!-- Posts will be displayed here -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Fetch and display posts on page load
+            $.ajax({
+                url: 'http://localhost:8000/api/posts/',
+                method: 'GET',
+                success: function (data) {
+                    displayPosts(data);
+                }
+            });
+
+            // Function to display posts
+            function displayPosts(posts) {
+                var postList = $('#post-list');
+                postList.empty();
+
+                $.each(posts, function (index, post) {
+                    postList.append('<div><h2>' + post.title + '</h2><p>' + post.content + '</p></div>');
+
+                    // Display comments
+                    postList.append('<ul>');
+                    $.each(post.comments, function (index, comment) {
+                        postList.append('<li>' + comment.text + '</li>');
+                    });
+                    postList.append('</ul>');
+
+                    // Add comment form
+                    postList.append('<div><textarea id="comment-text-' + post.id + '"></textarea><br><button onclick="addComment(' + post.id + ')">Add Comment</button></div>');
+                });
+            }
+
+            // Function to add a comment
+            window.addComment = function (postId) {
+                var commentText = $('#comment-text-' + postId).val();
+
+                $.ajax({
+                    url: '/api/posts/' + postId + '/add_comment/',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ text: commentText }),
+                    success: function () {
+                        // Refresh the post list after adding a comment
+                        $.ajax({
+                            url: '/api/posts/',
+                            method: 'GET',
+                            success: function (data) {
+                                displayPosts(data);
+                            }
+                        });
+                    }
+                });
+            };
+        });
+    </script>
+</body>
+</html>
