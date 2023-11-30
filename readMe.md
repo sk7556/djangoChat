@@ -21,5 +21,19 @@
 ![DRFPostsList](https://github.com/sk7556/djangoChat/assets/109896609/237070e5-b4c3-4021-860d-f2b6eba2fa91)
 
 ## 2. 개발 환경 & 사용 기술
-![image](https://github.com/sk7556/djangoChat/assets/109896609/b37d805d-4015-4baa-9ce6-16541967ef70)
-![image](https://github.com/sk7556/djangoChat/assets/109896609/e9e4ea42-9826-4bee-80e6-f5f2cdb24a76)
+[FrontEnd]
+![image](https://github.com/sk7556/djangoChat/assets/109896609/8a02c758-2724-4a6f-83fa-74fb2ed5cac6)
+![image](https://github.com/sk7556/djangoChat/assets/109896609/f5ec4aba-16d1-443e-8d31-d785cc37227e)
+![image](https://github.com/sk7556/djangoChat/assets/109896609/c522724d-677f-439c-9de0-740a769f1dca)
+
+
+[BackEnd]
+ ![image](https://github.com/sk7556/djangoChat/assets/109896609/a6439836-7e87-4c4e-9135-ea6f5578c028)
+![image](https://github.com/sk7556/djangoChat/assets/109896609/22b5d9b2-94f8-4da4-afc7-981ce5389367)
+
+[Tool]
+ ![image](https://github.com/sk7556/djangoChat/assets/109896609/cac7225c-de4c-4c43-86ce-ae0adbc7874c)
+![image](https://github.com/sk7556/djangoChat/assets/109896609/fc02f169-7e8c-480c-873e-28a7cb27e5fe)
+
+
+
