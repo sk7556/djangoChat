@@ -1,6 +1,5 @@
 # Django 메모장 
 -------------
-* Python DRF 의 CRUD 기능을 구현한 웹페이지를 작성
 
 ### 목차
 1. 목표와 기능
@@ -59,7 +58,7 @@
 | App       | URL                   | Http Method | File | 기능 |
 |------------|------------------------|-------------|-----|------|
 | blog     | blog/posts/    | '' | api.html | API Json 확인 |
-| ( live server )   |  localhost:5500    | POST, , DELETE | index.html | 메모입력 |
+| ( live server )   |  localhost:5500    | POST | index.html | 메모입력 |
 |     |     | GET | index.html | List출력 |
 |     |     | DELETE | index.html | 메모삭제 |
 
