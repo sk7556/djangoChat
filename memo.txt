@@ -4,7 +4,7 @@ Users/jungsik/.ssh/config
 
 Host 52.78.187.152
   HostName 52.78.187.152
-  User ubuntu.   
+  User ubuntu.    
 
 
 
